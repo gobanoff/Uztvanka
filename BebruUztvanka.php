@@ -64,6 +64,7 @@ if ('GET' == $_SERVER['REQUEST_METHOD']) :
 
         <style>
             div {
+                border-radius: 5px;
                 margin: 15px;
                 padding: 10px;
                 border: 1px solid;
@@ -71,9 +72,21 @@ if ('GET' == $_SERVER['REQUEST_METHOD']) :
                 height: 50px;
             }
 
+            input {
+                border-radius: 5px;
+                width: 100px;
+                height: 30px;
+                
+            }
+
             button {
-                background: blue;
+                width: 40px;
+                font-size: 18px;
+                font-weight: 700;
+                background: green;
                 color: white;
+                border: none;
+                border-radius: 5px;
             }
         </style>
 
