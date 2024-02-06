@@ -40,23 +40,23 @@ if ('GET' == $_SERVER['REQUEST_METHOD']) :
     <body>
 
         <h2>Juodieji: <?= getBebrai()['juodieji'] ?></h2>
-        <h2>Rudieji:  <?= getBebrai()['rudieji'] ?></h2>
-        <form action="http://localhost/New2/BebruUztvanka.php"method="post">
+        <h2>Rudieji: <?= getBebrai()['rudieji'] ?></h2>
+        <form action="http://localhost/New2/BebruUztvanka.php" method="post">
             <div>
-                <label>Prideti juodus : </label><input type="text"name="j_plus">
+                <label>Prideti juodus : </label><input type="text" name="j_plus">
                 <button type="submit" name="ka_daryti" value="prideti-juodus">+</button>
             </div>
             <div>
-                <label>Atimti juodus : </label><input type="text"name="j_minus">
+                <label>Atimti juodus : </label><input type="text" name="j_minus">
                 <button type="submit" name="ka_daryti" value="atimti-juodus">-</button>
             </div>
 
             <div>
-                <label>Prideti rudus : </label><input type="text"name="r_plus">
+                <label>Prideti rudus : </label><input type="text" name="r_plus">
                 <button type="submit" name="ka_daryti" value="prideti-rudus">+</button>
             </div>
             <div>
-                <label>Atimti rudus : </label><input type="text"name="r_minus">
+                <label>Atimti rudus : </label><input type="text" name="r_minus">
                 <button type="submit" name="ka_daryti" value="atimti-rudus">-</button>
             </div>
 
@@ -72,7 +72,7 @@ if ('GET' == $_SERVER['REQUEST_METHOD']) :
             }
 
             button {
-                background: red;
+                background: blue;
                 color: white;
             }
         </style>
