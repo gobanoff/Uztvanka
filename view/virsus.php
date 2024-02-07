@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
     <title>Bebru Uztvanka</title>
 </head>
 
@@ -11,13 +15,14 @@
     <nav>
         <a href="<?= URL ?>">Sarašas</a>
         <a href="<?= URL ?>?route=nauja">Nauja užtvanka</a>
+        <a href="<?= URL ?>?route=login">Loginas</a>
     </nav>
 
     <style>
         .b {
             background: red;
             width: 100px;
-            height: 22px;
+            height: 25px;
         }
 
         div {
@@ -27,13 +32,13 @@
             padding: 5px;
             border: 1px solid;
             width: 300px;
-            height: 20px;
+            height: 35px;
         }
 
-        input {
+        input {margin-left: 10px;border: none;background-color: lightyellow;
             border-radius: 5px;
             width: 50px;
-            height: 15px;
+            height: 20px;
 
         }
 
@@ -46,7 +51,7 @@
         }
 
         button {
-            height: 20px;
+            height: 25px;
             width: 40px;
             font-size: 18px;
             font-weight: 700;

@@ -49,11 +49,29 @@ function router()
         pridetiRudus($_GET['id']);
     } elseif ('POST' == $_SERVER['REQUEST_METHOD'] && 'atimti-rudus' == $route && isset($_GET['id'])) {
         atimtiRudus($_GET['id']);
-    } else {
+    } elseif ('GET' == $_SERVER['REQUEST_METHOD'] && 'login' == $route) {
+        rodytiLogin();
+    } 
+    
+    
+    
+    
+    else {
         echo 'page not found';
         die;
     }
 }
+
+function rodytiLogin(){
+
+
+    require __DIR__ . '/view/login.php';
+
+
+}
+
+
+
 
 
 function  pridetiJuodus(int $id)
