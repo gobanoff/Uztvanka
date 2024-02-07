@@ -53,9 +53,6 @@ function router()
         rodytiLogin();
     } 
     
-    
-    
-    
     else {
         echo 'page not found';
         die;
@@ -64,15 +61,9 @@ function router()
 
 function rodytiLogin(){
 
-
     require __DIR__ . '/view/login.php';
 
-
 }
-
-
-
-
 
 function  pridetiJuodus(int $id)
 {

@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <title>Bebru Uztvanka</title>
 </head>
@@ -19,6 +18,30 @@
     </nav>
 
     <style>
+        .form-floating {
+            width: 400px;
+            height: 60px;
+            border: none;
+        }
+
+
+        .form-control {
+            width: 400px;
+            margin: 0;
+        }
+
+        #l {
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+
+        .btn-primary {
+            margin-top: 10px;
+            margin-left: 10px;
+            width: 400px;
+            height: 50px;
+        }
+
         .b {
             background: red;
             width: 100px;
@@ -35,7 +58,10 @@
             height: 35px;
         }
 
-        input {margin-left: 10px;border: none;background-color: lightyellow;
+        input {
+            margin-left: 10px;
+            border: none;
+            background-color: lightyellow;
             border-radius: 5px;
             width: 50px;
             height: 20px;
