@@ -9,8 +9,8 @@
 
 <body>
     <nav>
-        <a href="<?= URL ?>">Sarasas</a>
-        <a href="<?= URL ?>?route=nauja">Nauja uztvanka</a>
+        <a href="<?= URL ?>">Sarašas</a>
+        <a href="<?= URL ?>?route=nauja">Nauja užtvanka</a>
     </nav>
 
     <style>
@@ -21,6 +21,7 @@
         }
 
         div {
+            margin-left: 50px;
             border-radius: 5px;
             margin: 5px;
             padding: 5px;
@@ -36,6 +37,14 @@
 
         }
 
+        .cart {
+            height: 350px;
+            width: 400px;
+            background-color: lightcyan;
+            margin-left: 30px;
+            margin-top: 30px;
+        }
+
         button {
             height: 20px;
             width: 40px;
@@ -45,5 +54,18 @@
             color: white;
             border: none;
             border-radius: 5px;
+        }
+
+        nav a {
+            color: white;
+            padding-left: 50px;
+            text-decoration: none;
+        }
+
+        nav {
+            font-size: 30px;
+            background: blue;
+            color: white;
+            padding-top: 20px;
         }
     </style>

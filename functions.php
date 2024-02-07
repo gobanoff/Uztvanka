@@ -120,7 +120,7 @@ function atimtiRudus(int $id)
 function destroy(int $id)
 {
     $bebrai = getBebrai();
-    foreach ($bebrai as $key=> $bebras) {
+    foreach ($bebrai as $key => $bebras) {
         if ($id == $bebras['id']) {
             unset($bebrai[$key]);
             break;
