@@ -34,6 +34,7 @@ function router()
     $route = $_GET['route'] ?? '';
 
     if ('GET' == $_SERVER['REQUEST_METHOD'] && '' === $route) {
+        auth();
         pirmasPuslapis();
     } elseif ('GET' == $_SERVER['REQUEST_METHOD'] && 'nauja' === $route) {
         rodytiNaujaPuslapi();
@@ -51,18 +52,57 @@ function router()
         atimtiRudus($_GET['id']);
     } elseif ('GET' == $_SERVER['REQUEST_METHOD'] && 'login' == $route) {
         rodytiLogin();
-    } 
-    
-    else {
+    } elseif ('GET' == $_SERVER['REQUEST_METHOD'] && 'home' == $route) {
+        rodytiHome();
+    } elseif ('POST' == $_SERVER['REQUEST_METHOD'] && 'login' == $route) {
+        darytiLogin();
+    } else {
         echo 'page not found';
         die;
     }
 }
 
-function rodytiLogin(){
+
+function auth()
+{
+    if (!isset($_SESSION['login']) || $_SESSION['login'] != 1) {
+        header('Location: ' . URL . '?route=login');
+        die;
+    }
+}
+function rodytiHome()
+{
+
+    require __DIR__ . '/view/home.php';
+}
+function rodytiLogin()
+{
 
     require __DIR__ . '/view/login.php';
+}
+function darytiLogin()
+{
+    $users = json_decode(file_get_contents(__DIR__ . '/users.json'), 1);
+    $name = $_POST['name'] ?? '';
 
+    $pass = md5($_POST['pass']) ?? '';
+
+    foreach ($users as $user) {
+        if ($user['name'] = $name) {
+
+            if ($user['pass'] = $pass) {
+
+                $_SESSION['login'] = 1;
+
+                $_SESSION['name'] = $name;
+
+                header('Location:' . URL);
+                die;
+            }
+        }
+    }
+    header('Location:' . URL . '?route=login');
+    die;
 }
 
 function  pridetiJuodus(int $id)

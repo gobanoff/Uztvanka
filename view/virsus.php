@@ -12,12 +12,27 @@
 
 <body>
     <nav>
+        <a href="<?= URL ?>?route=home">Home</a>
         <a href="<?= URL ?>">Sarašas</a>
         <a href="<?= URL ?>?route=nauja">Nauja užtvanka</a>
         <a href="<?= URL ?>?route=login">Loginas</a>
     </nav>
 
     <style>
+        .a {
+            margin-left: 50px;
+            margin-top: 40px;
+            width: 150px;
+            height: 60px;
+        }
+
+        .btn-warning {
+            margin-top: 100px;
+            margin-left: 100px;
+            width: 400px;
+            height: 50px;
+        }
+
         .form-floating {
             width: 400px;
             height: 60px;

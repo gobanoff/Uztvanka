@@ -1,14 +1,14 @@
 <?php
 require __DIR__ . '/virsus.php' ?>
-<form action="<?= URL ?>?route=login" method="post"id="l">
-    
+<form action="<?= URL ?>?route=login" method="post" id="l">
+
 
     <div class="form-floating">
-        <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput"> email</label>
+        <input type="text" class="form-control" name="name" id="floatingInput">
+        <label for="floatingInput"> name</label>
     </div>
     <div class="form-floating">
-        <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+        <input type="password" class="form-control" name="pass" id="floatingPassword">
         <label for="floatingPassword"> password</label>
     </div>
 
