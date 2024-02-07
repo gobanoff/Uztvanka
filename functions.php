@@ -39,6 +39,8 @@ function router()
         rodytiNaujaPuslapi();
     } elseif ('POST' == $_SERVER['REQUEST_METHOD'] && 'nauja' === $route) {
         sukurtiNaujaUztvanka();
+    } elseif ('POST' == $_SERVER['REQUEST_METHOD'] && 'destroy' === $route && isset($_GET['id'])) {
+        sugriautiUztvanka($_GET['id']);
     } elseif ('POST' == $_SERVER['REQUEST_METHOD'] && 'prideti-juodus' == $route && isset($_GET['id'])) {
         pridetiJuodus($_GET['id']);
     } elseif ('POST' == $_SERVER['REQUEST_METHOD'] && 'atimti-juodus' == $route && isset($_GET['id'])) {
@@ -115,6 +117,21 @@ function atimtiRudus(int $id)
 };
 
 
+function destroy(int $id)
+{
+    $bebrai = getBebrai();
+    foreach ($bebrai as $key=> $bebras) {
+        if ($id == $bebras['id']) {
+            unset($bebrai[$key]);
+            break;
+        }
+    }
+    setBebrai($bebrai);
+    header('Location: ' . URL);
+}
+
+
+
 function pirmasPuslapis()
 {
     $bebrai = getBebrai();
@@ -133,5 +150,10 @@ function sukurtiNaujaUztvanka()
 
     header('Location:' . URL);
 }
+function sugriautiUztvanka(int $id)
+{
+    destroy($id);
 
+    header('Location:' . URL);
+}
 ?>

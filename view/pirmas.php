@@ -2,6 +2,12 @@
 require __DIR__ . '/virsus.php' ?>
 <?php foreach ($bebrai as $bebras) : ?>
     <h3>Uztvanka Nr. <?= $bebras['id'] ?></h3>
+
+    <form action="<?= URL ?>?route=destroy&id=<?= $bebras['id'] ?>" method="post">
+
+        <button class="b" type="submit">Sugriauti</button>
+    </form>
+
     <h4>Juodieji: <?= $bebras['juodieji'] ?></h4>
     <h4>Rudieji: <?= $bebras['rudieji'] ?></h4>
 

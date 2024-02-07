@@ -14,6 +14,12 @@
     </nav>
 
     <style>
+        .b {
+            background: red;
+            width: 100px;
+            height: 22px;
+        }
+
         div {
             border-radius: 5px;
             margin: 5px;
