@@ -37,18 +37,24 @@ function router()
         auth();
         pirmasPuslapis();
     } elseif ('GET' == $_SERVER['REQUEST_METHOD'] && 'nauja' === $route) {
+        auth();
         rodytiNaujaPuslapi();
     } elseif ('POST' == $_SERVER['REQUEST_METHOD'] && 'nauja' === $route) {
+        auth();
         sukurtiNaujaUztvanka();
     } elseif ('POST' == $_SERVER['REQUEST_METHOD'] && 'destroy' === $route && isset($_GET['id'])) {
         sugriautiUztvanka($_GET['id']);
     } elseif ('POST' == $_SERVER['REQUEST_METHOD'] && 'prideti-juodus' == $route && isset($_GET['id'])) {
+        auth();
         pridetiJuodus($_GET['id']);
     } elseif ('POST' == $_SERVER['REQUEST_METHOD'] && 'atimti-juodus' == $route && isset($_GET['id'])) {
+        auth();
         atimtiJuodus($_GET['id']);
     } elseif ('POST' == $_SERVER['REQUEST_METHOD'] && 'prideti-rudus' == $route && isset($_GET['id'])) {
+        auth();
         pridetiRudus($_GET['id']);
     } elseif ('POST' == $_SERVER['REQUEST_METHOD'] && 'atimti-rudus' == $route && isset($_GET['id'])) {
+        auth();
         atimtiRudus($_GET['id']);
     } elseif ('GET' == $_SERVER['REQUEST_METHOD'] && 'login' == $route) {
         rodytiLogin();
@@ -56,11 +62,24 @@ function router()
         rodytiHome();
     } elseif ('POST' == $_SERVER['REQUEST_METHOD'] && 'login' == $route) {
         darytiLogin();
+    } elseif ('POST' == $_SERVER['REQUEST_METHOD'] && 'logout' == $route) {
+        auth();
+        darytiLogout();
     } else {
         echo 'page not found';
         die;
     }
 }
+
+function darytiLogout()
+{
+    unset($_SESSION['login'], $_SESSION['name']);
+
+    header('Location: ' . URL . '?route=home');
+    die;
+}
+
+
 
 function isLog()
 {

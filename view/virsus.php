@@ -12,17 +12,27 @@
 
 <body>
     <nav>
-        <a href="<?= URL ?>?route=home">Home</a>
+
 
         <?php if (isLog()) : ?>
-            <a href="<?= URL ?>">Sarašas</a>
-            <a href="<?= URL ?>?route=nauja">Nauja užtvanka</a>
-        <?php endif ?>
 
-        <a href="<?= URL ?>?route=login">Loginas</a>
+            
+                
+                <form action="<?= URL ?>?route=logout" method="post" >
+                    <button type="submit"class="c">Atsijungti <b class="n"><?= $_SESSION['name'] ?> </b></button>
+
+                </form>
+                <a href="<?= URL ?>?route=nauja">Nauja užtvanka</a>
+                <a href="<?= URL ?>">Sarašas</a>
+            
+        <?php else : ?>
+            <a href="<?= URL ?>?route=home">Home</a>
+            <a href="<?= URL ?>?route=login">Loginas</a>
+        <?php endif ?>
     </nav>
 
     <style>
+        .n{color: red;}
         .a {
             margin-left: 50px;
             margin-top: 40px;
@@ -107,9 +117,16 @@
             border-radius: 5px;
         }
 
-        nav a {
+        .c {background: blue;
+            font-size: 20px;
             color: white;
             padding-left: 50px;
+            text-decoration: none
+        }
+
+        nav a {
+            color: white;
+            padding-left: 250px;
             text-decoration: none;
         }
 
