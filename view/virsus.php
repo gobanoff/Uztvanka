@@ -12,19 +12,14 @@
 
 <body>
     <nav>
-
-
         <?php if (isLog()) : ?>
 
-            
-                
-                <form action="<?= URL ?>?route=logout" method="post" >
-                    <button type="submit"class="c">Atsijungti <b class="n"><?= $_SESSION['name'] ?> </b></button>
+            <form action="<?= URL ?>?route=logout" method="post">
+                <button type="submit" class="c">Atsijungti <b class="n"><?= $_SESSION['name'] ?> </b></button>
+            </form>
+            <a href="<?= URL ?>">Sarašas</a>
+            <a href="<?= URL ?>?route=nauja">Nauja užtvanka</a>
 
-                </form>
-                <a href="<?= URL ?>?route=nauja">Nauja užtvanka</a>
-                <a href="<?= URL ?>">Sarašas</a>
-            
         <?php else : ?>
             <a href="<?= URL ?>?route=home">Home</a>
             <a href="<?= URL ?>?route=login">Loginas</a>
@@ -32,7 +27,10 @@
     </nav>
 
     <style>
-        .n{color: red;}
+        .n {
+            color: lawngreen;font-size: 30px;font-weight: 600;
+        }
+
         .a {
             margin-left: 50px;
             margin-top: 40px;
@@ -117,7 +115,8 @@
             border-radius: 5px;
         }
 
-        .c {background: blue;
+        .c {
+            background: blue;
             font-size: 20px;
             color: white;
             padding-left: 50px;
@@ -130,10 +129,10 @@
             text-decoration: none;
         }
 
-        nav {
+        nav {padding-bottom: 20px;
             font-size: 30px;
             background: blue;
             color: white;
-            padding-top: 20px;
+            padding-top: 30px;
         }
     </style>
