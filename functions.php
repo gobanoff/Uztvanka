@@ -118,12 +118,13 @@ function darytiLogin()
                 $_SESSION['login'] = 1;
 
                 $_SESSION['name'] = $name;
-
+                addMessage('success', 'sekmingai prisijungta');
                 header('Location:' . URL);
                 die;
             }
         }
     }
+    addMessage('danger', ' neprisijungta');
     header('Location:' . URL . '?route=login');
     die;
 }
@@ -228,4 +229,26 @@ function sugriautiUztvanka(int $id)
 
     header('Location:' . URL);
 }
+
+function addMessage(string $type, string $msg): void
+
+{
+    $_SESSION['msg'][] = ['type' => $type, 'msg' => $msg];
+}
+function clearMessages(): void
+
+{
+    $_SESSION['msg'] = [];
+}
+function showMessages(): void
+
+{
+    $messages = $_SESSION['msg'];
+    clearMessages();
+    require __DIR__ . '/view/msg.php';
+}
+
+
+
+
 ?>

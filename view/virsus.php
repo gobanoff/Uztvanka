@@ -25,10 +25,18 @@
             <a href="<?= URL ?>?route=login">Loginas</a>
         <?php endif ?>
     </nav>
+    <?php showMessages() ?>
 
     <style>
+        .alert {margin-left: 150px;margin-top: 20px;
+            width: 200px;
+            height: 60px;
+        }
+
         .n {
-            color: lawngreen;font-size: 30px;font-weight: 600;
+            color: lawngreen;
+            font-size: 30px;
+            font-weight: 600;
         }
 
         .a {
@@ -129,7 +137,8 @@
             text-decoration: none;
         }
 
-        nav {padding-bottom: 20px;
+        nav {
+            padding-bottom: 20px;
             font-size: 30px;
             background: blue;
             color: white;
