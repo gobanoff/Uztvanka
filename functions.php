@@ -62,7 +62,11 @@ function router()
     }
 }
 
+function isLog()
+{
 
+    return isset($_SESSION['login']) && $_SESSION['login'] = 1;
+}
 function auth()
 {
     if (!isset($_SESSION['login']) || $_SESSION['login'] != 1) {
@@ -88,9 +92,9 @@ function darytiLogin()
     $pass = md5($_POST['pass']) ?? '';
 
     foreach ($users as $user) {
-        if ($user['name'] = $name) {
+        if ($user['name'] == $name) {
 
-            if ($user['pass'] = $pass) {
+            if ($user['pass'] == $pass) {
 
                 $_SESSION['login'] = 1;
 

@@ -13,8 +13,12 @@
 <body>
     <nav>
         <a href="<?= URL ?>?route=home">Home</a>
-        <a href="<?= URL ?>">Sarašas</a>
-        <a href="<?= URL ?>?route=nauja">Nauja užtvanka</a>
+
+        <?php if (isLog()) : ?>
+            <a href="<?= URL ?>">Sarašas</a>
+            <a href="<?= URL ?>?route=nauja">Nauja užtvanka</a>
+        <?php endif ?>
+
         <a href="<?= URL ?>?route=login">Loginas</a>
     </nav>
 
@@ -92,6 +96,7 @@
         }
 
         button {
+            margin-left: 10px;
             height: 25px;
             width: 40px;
             font-size: 18px;
