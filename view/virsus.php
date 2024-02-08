@@ -28,7 +28,9 @@
     <?php showMessages() ?>
 
     <style>
-        .alert {margin-left: 150px;margin-top: 20px;
+        .alert {
+            margin-left: 150px;
+            margin-top: 20px;
             width: 200px;
             height: 60px;
         }
@@ -96,7 +98,7 @@
         input {
             margin-left: 10px;
             border: none;
-            background-color: lightyellow;
+            background-color: lightpink;
             border-radius: 5px;
             width: 50px;
             height: 20px;

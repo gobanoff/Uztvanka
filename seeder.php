@@ -6,4 +6,3 @@ $users = [
 ];
 $users = json_encode($users);
 file_put_contents(__DIR__ . '/users.json', $users);
-?>

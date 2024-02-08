@@ -1,15 +1,15 @@
 <?php if (!empty($messages)) : ?>
 
-   
 
-            <?php foreach ($messages as $message) : ?>
 
-                <div class="alert alert-<?= $message['type'] ?>" role="alert">
+    <?php foreach ($messages as $message) : ?>
 
-                    <?= $message['msg'] ?>
+        <div class="alert alert-<?= $message['type'] ?>" role="alert">
 
-                </div>
+            <?= $message['msg'] ?>
 
-            <?php endforeach ?>
-       
+        </div>
+
+    <?php endforeach ?>
+
 <?php endif ?>

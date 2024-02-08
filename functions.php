@@ -20,7 +20,7 @@ function setNauja(): void
 {
     $bebrai = json_decode(file_get_contents(__DIR__ . '/bebrai.json'), 1);
 
-    $nr = rand(1000000000, 9999999999);
+    $nr = rand(100000000000, 999999999999);
     $nauja = ['juodieji' => 0, 'rudieji' => 0, 'id' => $nr];
     $bebrai[] = $nauja;
     $bebrai = json_encode($bebrai);
@@ -148,15 +148,24 @@ function atimtiJuodus(int $id)
 {
     $bebrai = getBebrai();
     foreach ($bebrai as &$bebras) {
-
         if ($id == $bebras['id']) {
+            if ((int)$_POST['j_minus'] > $bebras['juodieji']) {
+
+                addMessage('danger', 'tiek nera');
+                header('Location:' . URL);
+                die;
+            }
+
             $bebras['juodieji'] -= (int)$_POST['j_minus'];
-            break;
+            setBebrai($bebrai);
+            addMessage('success', 'atemimas');
+            header('Location:' . URL);
+            die;
         }
     }
-
-    setBebrai($bebrai);
+    addMessage('danger', 'nera uztvankos');
     header('Location:' . URL);
+    die;
 };
 
 function pridetiRudus(int $id)
@@ -178,15 +187,24 @@ function atimtiRudus(int $id)
 {
     $bebrai = getBebrai();
     foreach ($bebrai as &$bebras) {
-
         if ($id == $bebras['id']) {
+            if ((int)$_POST['r_minus'] > $bebras['rudieji']) {
+
+                addMessage('danger', 'tiek nera');
+                header('Location:' . URL);
+                die;
+            }
+
             $bebras['rudieji'] -= (int)$_POST['r_minus'];
-            break;
+            setBebrai($bebrai);
+            addMessage('success', 'atemimas');
+            header('Location:' . URL);
+            die;
         }
     }
-
-    setBebrai($bebrai);
-    header('Location: ' . URL);
+    addMessage('danger', 'nera uztvankos');
+    header('Location:' . URL);
+    die;
 };
 
 
@@ -200,6 +218,7 @@ function destroy(int $id)
         }
     }
     setBebrai($bebrai);
+    addMessage('danger', 'sugriauta uztvanka');
     header('Location: ' . URL);
 }
 
@@ -220,7 +239,7 @@ function rodytiNaujaPuslapi()
 function sukurtiNaujaUztvanka()
 {
     setNauja();
-
+    addMessage('success', 'sukurta nauja uztvanka');
     header('Location:' . URL);
 }
 function sugriautiUztvanka(int $id)
